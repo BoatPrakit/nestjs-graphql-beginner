@@ -4,7 +4,9 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ComponentsModule } from './components/components.module';
+import { CarsModule } from './cars/cars.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -14,7 +16,9 @@ import { ComponentsModule } from './components/components.module';
       debug: true,
       autoSchemaFile: true,
     }),
-    ComponentsModule,
+    CarsModule,
+    UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
